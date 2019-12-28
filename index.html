@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AlgoNigga</title>
+    <meta
+      name="description"
+      content="AlgoNigga is a website where you can learn algorithms with their simulations easily"
+    />
+    <link rel="icon" href="/test_icon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body class="w3-content" style="max-width:1200px">
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top"
+      style="z-index:3"
+      id="mySidebar"
+    >
+      <div class="w3-container w3-display-container w3-padding-16">
+        <i
+          onclick="w3_close()"
+          class="fa fa-remove w3-hide-large w3-button w3-display-topright"
+        ></i>
+        <h3 class="w3-wide"><b>ALGO NIGGA</b></h3>
+      </div>
+      <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+        <a href="/index.html" class="w3-bar-item w3-button">Algorithms</a>
+        <a
+          onclick="myAccFunc('algoAnalysis')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-block w3-left-align"
+          id="algoAnalysisBtn"
+        >
+          Algorithms Analysis <i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="algoAnalysis"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Time Complexity</a>
+          <a href="#" class="w3-bar-item w3-button"
+            >Calculating Time Complexity</a
+          >
+          <a href="#" class="w3-bar-item w3-button">Ternary Search</a>
+        </div>
+        <a
+          onclick="myAccFunc('searchingAlgo')"
+          href="javascript:void(0)"
+          class="w3-button w3-block w3-left-align"
+          id="searchingBtn"
+        >
+          Searching <i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="searchingAlgo"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Linear Search</a>
+          <a href="#" class="w3-bar-item w3-button">Binary Search</a>
+          <a href="#" class="w3-bar-item w3-button">Ternary Search</a>
+        </div>
+        <a
+          onclick="myAccFunc('sortingAlgo')"
+          href="javascript:void(0)"
+          class="w3-button w3-block w3-left-align"
+          id="sortingBtn"
+        >
+          Sorting <i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="sortingAlgo"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Bubble Sort</a>
+          <a href="#" class="w3-bar-item w3-button">Selection Sort</a>
+          <a href="#" class="w3-bar-item w3-button">Insertion Sort</a>
+          <a href="#" class="w3-bar-item w3-button">Merge Sort</a>
+          <a href="#" class="w3-bar-item w3-button">Quick Sort</a>
+        </div>
+        <a
+          onclick="myAccFunc('graphAlgo')"
+          href="javascript:void(0)"
+          class="w3-button w3-block w3-left-align"
+          id="graphAlgoBtn"
+        >
+          Graph Theory <i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="graphAlgo"
+          class="w3-bar-item w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Graph Basic</a>
+          <a href="#" class="w3-bar-item w3-button">Representation of Graphs</a>
+          <a
+            onclick="myAccFunc('graphSearchAlgo')"
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-block w3-left-align"
+            id="graphSearchAlgoBtn"
+          >
+            Graph Searching <i class="fa fa-caret-down"></i>
+          </a>
+          <div
+            id="graphSearchAlgo"
+            class="w3-bar-block w3-hide w3-padding-large w3-medium"
+          >
+            <a href="#" class="w3-bar-item w3-button"
+              >Breadth First Search(BFS)</a
+            >
+            <a href="#" class="w3-bar-item w3-button"
+              >Breadth First Search (BFS)</a
+            >
+          </div>
+          <a
+            onclick="myAccFunc('minSpanAlgo')"
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-block w3-left-align"
+            id="minSpanAlgoBtn"
+          >
+            Minimum Spanning Tree <i class="fa fa-caret-down"></i>
+          </a>
+          <div
+            id="minSpanAlgo"
+            class="w3-bar-block w3-hide w3-padding-large w3-medium"
+          >
+            <a href="#" class="w3-bar-item w3-button">Prims</a>
+            <a href="#" class="w3-bar-item w3-button">Kruskals</a>
+          </div>
+          <a href="#" class="w3-bar-item w3-button"
+            >Strongly Connected Components</a
+          >
+          <a
+            onclick="myAccFunc('shortestPathAlgo')"
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-block w3-left-align"
+            id="shortestPathAlgoBtn"
+          >
+            Shortest Path <i class="fa fa-caret-down"></i>
+          </a>
+          <div
+            id="shortestPathAlgo"
+            class="w3-bar-block w3-hide w3-padding-large w3-medium"
+          >
+            <a href="/Graph/ShortestPath/BellmanFord/bellmanford.html" class="w3-bar-item w3-button">Bellman Ford</a>
+            <a href="#" class="w3-bar-item w3-button">Dijkastra</a>
+          </div>
+        </div>
+        <a
+          onclick="myAccFunc('greedyAlgo')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-block w3-left-align"
+          id="greedyAlgoBtn"
+        >
+          Greedy Algorithms<i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="greedyAlgo"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Basics</a>
+          <a href="#" class="w3-bar-item w3-button">Scheduling</a>
+          <a href="#" class="w3-bar-item w3-button">Resource Distributing</a>
+        </div>
+        <a
+          onclick="myAccFunc('dynamicAlgo')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-block w3-left-align"
+          id="dynamicAlgoBtn"
+        >
+          Dynamic Programming<i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="dynamicAlgo"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Basics</a>
+          <a href="#" class="w3-bar-item w3-button">Fibonacci</a>
+          <a href="#" class="w3-bar-item w3-button">Knapsack</a>
+          <a href="#" class="w3-bar-item w3-button"
+            >Longest Common Substring(LCS)</a
+          >
+        </div>
+        <a href="#" class="w3-bar-item w3-button">Huffman Coding</a>
+        <a href="#" class="w3-bar-item w3-button">Hashing</a>
+      </div>
+      <div>
+        <p style="font-weight: bold;"><i>more coming soon</i></p>
+      </div>
+      <!--<a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>-->
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+      <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+      <a
+        href="javascript:void(0)"
+        class="w3-bar-item w3-button w3-padding-24 w3-right"
+        onclick="w3_open()"
+        ><i class="fa fa-bars"></i
+      ></a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-hide-large"
+      onclick="w3_close()"
+      style="cursor:pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:250px">
+      <!-- Push down content on small screens -->
+      <div class="w3-hide-large" style="margin-top:83px"></div>
+
+      <!-- Top header -->
+      <header class="w3-container w3-xlarge">
+        <!--<div class="w3-panel w3-pale-green">
+          <p>
+            This website is still under development. Wait for more updates. This
+            is the first website I'm working on. So, it may look tedious. Sorry
+            for that.
+          </p>
+        </div>-->
+        <p class="w3-left" id = "title">
+          Algorithms
+        </p>
+        <p class="w3-right"></p>
+      </header>
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div id="myContent">
+        <p>
+          Human kind has been working on problems for centuries. So, any problem
+          you are trying to solve (or a sub problem you are facing while solving
+          a large problem) might not be totally new. There is a high possibility
+          that someone has already discovered an efficient way to solve similar
+          type of problem efficiently. We better use them. Why? Let’s take an
+          example:
+        </p>
+        <div class="w3-panel w3-card-4 w3-black">
+          <h6>pseudocode 1:</h6><hr>
+          <code>
+            a = 5 <br>
+            n = 100<br>
+            while (n != 0)<br>
+	          &ThickSpace;a++<br>
+	          &ThickSpace;n--<br>
+            print (a)<br>
+            <br>
+          </code>
+        </div>
+
+        <div class="w3-panel w3-card-4 w3-black">
+          <h6>pseudocode 2:</h6><hr>
+          <code>
+            a = 5 <br>
+            n = 100 <br>
+            a = a + n <br>
+            print (a) <br>
+            <br>
+          </code>
+        </div>
+        <br>
+        
+        <p>Both of the pseudocodes will print the same result 105. But which one is faster? The 2nd one, right? But some of you may argue that adding 1 to a, 100 times don’t even matter for our advanced processors. A 2 GHz processor can easily handle 2 billion operations per second. But what if the value of n is 200 billion? It would take 100 seconds for a 2 GHz processor to execute pseudocode 1 while it takes 10^-9 seconds to execute the 2nd one.</p>
+        <p>Computers can perform only a limited number of operations per second. In real life problems we always work with large numbers. Think about google maps (Trillions of roads & routes), facebook (more than 2.3 billions of users), medical diagnosis studies (human genome, neurons etc)… these can be some real life examples of use of large numbers. So, learning algorithms is necessary.</p>
+        </div>
+        
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------->
+        <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+          <div class="w3-row">
+            <div class="w3-col m6 w3-center">
+              <div class="w3-card-4" id = "footerCard">
+              <header class="w3-container w3-black">
+                <h1>About Us</h1>
+              </header>
+          
+              <div class="w3-container">
+                <p>We are just a few students trying to help fellow students in understanding the basic concepts of some algorithms with their simulations. 
+                  This website is still an infant and lacks a lot of things. 
+                  Please give us some more time to add more topics and features. 
+                  If you are willing to contribute anyhow,
+                  join our facebook group.</p>
+              </div>
+          
+              <footer class="w3-black">
+                <button type="submit" class="w3-button w3-block">Join Our FB group</button>
+              </footer>
+            </div></div>
+            <div class="w3-col m6 w3-center">
+              <h4>Contact</h4>
+              <p>Problem? Go ahead.</p>
+              <form name="footerForm" netlify>
+                <p><input class="w3-input w3-border" type="email" placeholder="Email" name="Email" required></p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+                <p><textarea name="Message" id="contact" cols="60rem" rows=".5rem"></textarea></p>
+                <button type="submit" class="w3-button w3-block w3-black">Send</button>
+                </form>
+            </div> 
+            
+          </div>
+        </footer>
+      
+            <div class="w3-black w3-center w3-padding-24">
+              Copyright &copy; AlgoNigga.com || All rights reserved.
+            </div>
+      </div>
+
+       
+      <!-- End page content -->
+    </div>
+    <!-- Footer -->
+
+    <script src="/index.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/index.js"></script>
+  </body>
+</html>

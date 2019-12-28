@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AlgoNigga</title>
+    <meta
+      name="description"
+      content="AlgoNigga is a website where you can learn algorithms with their simulations easily"
+    />
+    <link rel="icon" href="/test_icon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/Graph/ShortestPath/BellmanFord/bellmanford.css">
+  </head>
+
+  <body class="w3-content" style="max-width:1200px">
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top"
+      style="z-index:3"
+      id="mySidebar"
+    >
+      <div class="w3-container w3-display-container w3-padding-16">
+        <i
+          onclick="w3_close()"
+          class="fa fa-remove w3-hide-large w3-button w3-display-topright"
+        ></i>
+        <h3 class="w3-wide"><b>ALGO NIGGA</b></h3>
+      </div>
+      <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+        <a href="#" class="w3-bar-item w3-button">Algorithms</a>
+        <a
+          onclick="myAccFunc('algoAnalysis')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-block w3-left-align"
+          id="algoAnalysisBtn"
+        >
+          Algorithms Analysis <i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="algoAnalysis"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Time Complexity</a>
+          <a href="#" class="w3-bar-item w3-button"
+            >Calculating Time Complexity</a
+          >
+          <a href="#" class="w3-bar-item w3-button">Ternary Search</a>
+        </div>
+        <a
+          onclick="myAccFunc('searchingAlgo')"
+          href="javascript:void(0)"
+          class="w3-button w3-block w3-left-align"
+          id="searchingBtn"
+        >
+          Searching <i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="searchingAlgo"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Linear Search</a>
+          <a href="#" class="w3-bar-item w3-button">Binary Search</a>
+          <a href="#" class="w3-bar-item w3-button">Ternary Search</a>
+        </div>
+        <a
+          onclick="myAccFunc('sortingAlgo')"
+          href="javascript:void(0)"
+          class="w3-button w3-block w3-left-align"
+          id="sortingBtn"
+        >
+          Sorting <i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="sortingAlgo"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Bubble Sort</a>
+          <a href="#" class="w3-bar-item w3-button">Selection Sort</a>
+          <a href="#" class="w3-bar-item w3-button">Insertion Sort</a>
+          <a href="#" class="w3-bar-item w3-button">Merge Sort</a>
+          <a href="#" class="w3-bar-item w3-button">Quick Sort</a>
+        </div>
+        <a
+          onclick="myAccFunc('graphAlgo')"
+          href="javascript:void(0)"
+          class="w3-button w3-block w3-left-align"
+          id="graphAlgoBtn"
+        >
+          Graph Theory <i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="graphAlgo"
+          class="w3-bar-item w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Graph Basic</a>
+          <a href="#" class="w3-bar-item w3-button">Representation of Graphs</a>
+          <a
+            onclick="myAccFunc('graphSearchAlgo')"
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-block w3-left-align"
+            id="graphSearchAlgoBtn"
+          >
+            Graph Searching <i class="fa fa-caret-down"></i>
+          </a>
+          <div
+            id="graphSearchAlgo"
+            class="w3-bar-block w3-hide w3-padding-large w3-medium"
+          >
+            <a href="#" class="w3-bar-item w3-button"
+              >Breadth First Search(BFS)</a
+            >
+            <a href="#" class="w3-bar-item w3-button"
+              >Breadth First Search (BFS)</a
+            >
+          </div>
+          <a
+            onclick="myAccFunc('minSpanAlgo')"
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-block w3-left-align"
+            id="minSpanAlgoBtn"
+          >
+            Minimum Spanning Tree <i class="fa fa-caret-down"></i>
+          </a>
+          <div
+            id="minSpanAlgo"
+            class="w3-bar-block w3-hide w3-padding-large w3-medium"
+          >
+            <a href="#" class="w3-bar-item w3-button">Prims</a>
+            <a href="#" class="w3-bar-item w3-button">Kruskals</a>
+          </div>
+          <a href="#" class="w3-bar-item w3-button"
+            >Strongly Connected Components</a
+          >
+          <a
+            onclick="myAccFunc('shortestPathAlgo')"
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-block w3-left-align"
+            id="shortestPathAlgoBtn"
+          >
+            Shortest Path <i class="fa fa-caret-down"></i>
+          </a>
+          <div
+            id="shortestPathAlgo"
+            class="w3-bar-block w3-hide w3-padding-large w3-medium"
+          >
+            <a href="#" class="w3-bar-item w3-button">Bellman Ford</a>
+            <a href="#" class="w3-bar-item w3-button">Dijkastra</a>
+          </div>
+        </div>
+        <a
+          onclick="myAccFunc('greedyAlgo')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-block w3-left-align"
+          id="greedyAlgoBtn"
+        >
+          Greedy Algorithms<i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="greedyAlgo"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Basics</a>
+          <a href="#" class="w3-bar-item w3-button">Scheduling</a>
+          <a href="#" class="w3-bar-item w3-button">Resource Distributing</a>
+        </div>
+        <a
+          onclick="myAccFunc('dynamicAlgo')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-block w3-left-align"
+          id="dynamicAlgoBtn"
+        >
+          Dynamic Programming<i class="fa fa-caret-down"></i>
+        </a>
+        <div
+          id="dynamicAlgo"
+          class="w3-bar-block w3-hide w3-padding-large w3-medium"
+        >
+          <a href="#" class="w3-bar-item w3-button">Basics</a>
+          <a href="#" class="w3-bar-item w3-button">Fibonacci</a>
+          <a href="#" class="w3-bar-item w3-button">Knapsack</a>
+          <a href="#" class="w3-bar-item w3-button"
+            >Longest Common Substring(LCS)</a
+          >
+        </div>
+        <a href="#" class="w3-bar-item w3-button">Huffman Coding</a>
+        <a href="#" class="w3-bar-item w3-button">Hashing</a>
+      </div>
+      <div>
+        <p style="font-weight: bold;"><i>more coming soon</i></p>
+      </div>
+      <!--<a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>-->
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+      <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+      <a
+        href="javascript:void(0)"
+        class="w3-bar-item w3-button w3-padding-24 w3-right"
+        onclick="w3_open()"
+        ><i class="fa fa-bars"></i
+      ></a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-hide-large"
+      onclick="w3_close()"
+      style="cursor:pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:250px">
+      <!-- Push down content on small screens -->
+      <div class="w3-hide-large" style="margin-top:83px"></div>
+
+      <!-- Top header -->
+      <header class="w3-container w3-xlarge">
+        <p class="w3-left" id = "title">
+          Bellman Ford
+        </p>
+        <p class="w3-right"></p>
+      </header>
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------><!------------------------------------------------------------------------------------------------------------------------------------------------><!------------------------------------------------------------------------------------------------------------------------------------------------>
+      <div id="myContent">
+        <p>
+            Bellman Ford is a <strong>single source shortest path</strong> graph algorithm. It is used to find the shortest paths from the source vertex to all other vertices in a weighted graph. It checks out for all possible solutions to pick up the best solution (uses <strong>rute force approach</strong>B & <strong>Dynamic Programming technique</strong>) and so it is slower but it can work with graphs in which edges can have negative weights.
+        </p>
+
+        <p>Let’s see how it works first. Given <strong>a weighted directed graph</strong> below,</p>
+
+        <img src="/Graph/ShortestPath/BellmanFord/img/1.jpg" class="w3-round-small" alt="A weighted graph">
+
+        <p>
+          We have to relax all the edges of V-1 times (when there are V vertices or nodes).
+          We will make an edge list for that. For this example, the edgelist would be,
+          (1,2), (1,3), (2,3), (2,5), (3,1), (3,4), (4,1), (4,5), (5,3)
+        </p>
+
+        <img src="/Graph/ShortestPath/BellmanFord/img/2.jpg" class="w3-round-small" alt="Simulation table">
+
+        <p>After that we pick edges one by one from our edgelist we have created a few moments ago which are like (u,v) and then we start using our Relax method which can be represented in a pseudo code like this,</p>
+
+        <div class="w3-panel w3-card-4 w3-black">
+          <code>
+            <br>
+            Relax (u, v, w) { <br>
+              If ((d[u] + w) &lt; d[v]) <br>
+                d[v] = d[u] + w <br>
+            } <br>   
+            <br>
+          </code>
+        </div>
+       <p>Here, 
+         <ul>
+          <li>u & v means the nodes that edge is connected to</li>
+          <li>w means the weight of that edge</li>
+       </ul>
+       </p>
+         
+        <p>
+          Assume that we are picking (1,2) first so the values of the variables would be 
+          u = 1, v = 2, w = 2. Here, d[u] = 0 (look at the table above) and so d[u] + w = 2. It’s definitely greater than d[v] (as d[v] = ∞). So, we update the value of d[v].
+        </p>
+        <img src="/Graph/ShortestPath/BellmanFord/img/3.jpg" class="w3-round-small" alt="Simulation Table">
+
+        <p>The next (1,3). As d[u] + w = 1 less than ∞, we update.</p>
+        <img src="/Graph/ShortestPath/BellmanFord/img/4.jpg" class="w3-round-small" alt="Simulation Table">
+        <p>Then it comes to (2,3). Here d[u] = d[2] = 2 as we have updated node 2 recently. w = -2 (look at the graph). So, d[u] + w = 0. d[v] = d[3] = 1 and 0 is definitely less than 1. So, we update the table.</p>
+        <img src="/Graph/ShortestPath/BellmanFord/img/5.jpg" class="w3-round-small" alt="Simulation Table">
+        <p>Similarly, we keep doing the same thing for all other edges and then our table looks like this. (Remember we don’t update the table when the edge can’t fulfill its condition in Relax method/function)</p>
+        <img src="/Graph/ShortestPath/BellmanFord/img/6.jpg" class="w3-round-small" alt="Simulation Table">
+        <p>Thus, our first iteration is finished.</p>
+        <p>Now we have to start our second iteration and we have to keep doing the same thing for V-1 times (here V = 5 so, 4 times for this graph).</p>
+        <img src="/Graph/ShortestPath/BellmanFord/img/7.jpg" class="w3-round-small" alt="Simulation Table">
+        <p>But after checking all the the edges we can’t find any changes at all. So, for this graph, we break after the 2nd iteration. </p>
+        <p>Now we have got distances of shortest paths to all the nodes/vertices from a single source (node 1). For example, the shortest path from 1 to 5 would be of 4 weights.</p>
+        <img src="/Graph/ShortestPath/BellmanFord/img/8.jpg" class="w3-round-small" alt="Simulation Table">
+
+        <h4><strong>Negative cycles:</strong></h4>
+        <p>A negative cycle is one in which the overall sum of the cycle comes negative. <br>For example,</p>
+        <img src="/Graph/ShortestPath/BellmanFord/img/9.jpg" class="w3-round-small" alt="Negative Cycle Exmaple">
+        <p>This graph has a cycle and the sum of the edges of the cycle is (-2) + (-2) + 3 = -1. So, if we want to find a shortest path from node 1 to node 5, we can just keep going 2 &#8702; 3 &#8702; 4 &#8702; 2 &#8702; 3… because this cycle keeps making the net weight of the path smaller and smaller. Hence, there is no shortest path available in graphs with negative edges.</p>
+        <div class="w3-panel w3-pale-green">
+          <p>The advantage of using Bellman Ford is that it can detect whether a graph has negative edges or not. We know that, there shouldn’t be any change in distances of the nodes from the source after (V-1) times iteration. But sometimes it still fulfills the if condition and changes the value of d[v]. When that happens, we can be sure that the graph has at least one negative cycle and finding shortest path is not possible for this graph. </p>
+        </div>
+        <p>Negative weights might seem absurd at first but they can explain a lot of phenomena like cashflow, heat released/absorbed in a chemical reaction etc. For instance, if there are different methods/reactions to make Chemical B from A, then each method will have sub-reactions involving both heat releasing and absorption. Bellman Ford is used in Optimization in Chemical Production. </p>
+        
+        <h4><strong>Notworthy points :</strong></h4>
+        <ul class="w3-ul w3-card-4">
+          <li>
+            <p>•  After the 1st iteration we become sure about the shortest path of the adjacent nodes to the source.</p>
+            <img src="/Graph/ShortestPath/BellmanFord/img/9-1.jpg" class="w3-round-small" alt="Point">
+            <p>Then after the 2nd iteration we become sure of those nodes which are adjacent to the nodes that were adjacent to the source. And so on…</p>
+          </li>
+          <li>
+            <p>•	If there are V nodes and more than V-1 edges then there must be a cycle in that graph. We don’t need to calculate cycles to calculate shortest path. So, we know for sure that there would be at most V-1 iterations</p>
+          </li>
+        </ul>
+
+        <div class="w3-panel w3-card-4 w3-black">
+          <h6>pseudocode:</h6><hr>
+          <code>
+            BellmanFord (G,w,s) <br>
+            &ThickSpace; for (x: x ∈ V) <br>
+		        &ThickSpace; &ThickSpace; d[x] = INF <br>
+            &ThickSpace; &ThickSpace;  d[s] = 0 <br>
+            <br>
+	          &ThickSpace; for (i from 1 to V-1) <br>
+            &ThickSpace; &ThickSpace; for ((u,v,w): (u,v,w) ∈ EdgeList) <br>
+            &ThickSpace; &ThickSpace; &ThickSpace; Relax(u,v,w) <br>
+            <br>
+	          &ThickSpace; for ((u,v,w): (u,v,w) ∈ EdgeList) <br>
+		        &ThickSpace; &ThickSpace; if (d[u] + w &lt; d[v]) <br>
+            &ThickSpace; &ThickSpace; &ThickSpace;  print (“Negative cycle is present”) <br>
+			      &ThickSpace; &ThickSpace; &ThickSpace; return false <br>
+            &ThickSpace; &ThickSpace; else return true <br>
+            <br><br>
+            Relax (u,v,w) <br>
+	          &ThickSpace; if (d[u] + w &lt; d[v]) <br>
+	        	&ThickSpace; &ThickSpace; d[v] = d[u] + w <br>
+            <br>
+        </div>
+        <br>
+
+        <div class="complexity">
+          <h4><strong>Time Complexity</strong></h4>
+        <p>Let, 
+          <ul>
+            <li>V = number of Vertices/Nodes</li>
+            <li>E = number of Edges</li>
+          </ul>
+        </p>
+        <img src="/Graph/ShortestPath/BellmanFord/img/10.jpg" class="w3-round-small" alt="Complexity">
+        <p>So, the time complexity would be O(V + VE+ E) <br> = <strong>O (VE)</strong> </p>
+        <h4><strong>Space Complexity</strong></h4>
+        <p>As it just need extra space for all the edges if we use EdgeList Space Complexity would be <br> = <strong>O(E)</strong> (number of edges)</p> 
+        </div>
+        
+
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------>
+        
+        <footer class="w3-padding-32 w3-light-grey w3-small w3-center" id="footer">
+          <div class="w3-row">
+            <div class="w3-col m6 w3-center">
+              <div class="w3-card-4" id = "footerCard">
+              <header class="w3-container w3-black">
+                <h1>About Us</h1>
+              </header>
+          
+              <div class="w3-container">
+                <p>We are just a few students trying to help fellow students in understanding the basic concepts of some algorithms with their simulations. 
+                  This website is still an infant and lacks a lot of things. 
+                  Please give us some more time to add more topics and features. 
+                  If you are willing to contribute anyhow,
+                  join our facebook group.</p>
+              </div>
+          
+              <footer class="w3-black">
+                <button type="submit" class="w3-button w3-block">Join Our FB group</button>
+              </footer>
+            </div>
+          </div>
+            <div class="w3-col m6 w3-center">
+              <h4>Contact</h4>
+              <p>Problem? Go ahead.</p>
+              <form name="footerForm" netlify>
+                <p><input class="w3-input w3-border" type="email" placeholder="Email" name="Email" required></p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+                <p><textarea name="Message" id="contact" cols="60rem" rows=".5rem"></textarea></p>
+                <button type="submit" class="w3-button w3-block w3-black">Send</button>
+              </form>
+            </div> 
+          </div>
+        </footer>
+      
+            <div class="w3-black w3-center w3-padding-24">
+              Copyright &copy; AlgoNigga || All rights reserved.
+            </div>
+      </div> 
+      <!-- End page content -->
+    </div>
+    <!-- Footer -->
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/index.js"></script>
+  </body>
+</html>

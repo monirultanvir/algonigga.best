@@ -1,0 +1,57 @@
+html {
+  font-size: 62.5%;
+}
+
+.w3-sidebar a {
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.w3-wide {
+  font-family: "Montserrat", sans-serif;
+}
+
+#myContent {
+  font-size: 1.6rem;
+  padding: 1rem;
+}
+.w3-panel {
+  font-size: 1.6rem;
+}
+#contactForm {
+  margin-left: 24rem;
+}
+
+#mySidebar {
+  width: 25rem;
+}
+
+#title {
+  font-size: 3.2rem;
+}
+#footerCard {
+  margin: 2rem;
+}
+
+#contact {
+  width: 100%;
+  margin: 3px -1px;
+  padding: 0;
+}
+
+.w3-round-small {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+}
+
+.complexity {
+  color: black;
+}
