@@ -267,10 +267,8 @@
           </ul></i></p>
         </div>
 
-        <p>Let’s see how it works first. </p>
-
+        <br>
         <h3><strong>Simulation</strong></h3>
-        
         <ul class="w3-ul w3-card-4">
           <li><h5 class="w3-center"><strong>Steps</strong></h5></li>
           <li><p>1. Make an EdgeList</p></li>
@@ -343,7 +341,7 @@
         <img src="/Graph/ShortestPath/BellmanFord/img/8.jpg" class="w3-round-small" alt="Simulation Table">
 
 
-
+        <br>
         <h3><strong>Negative cycles</strong></h3>
         <p>A negative cycle is one in which the overall sum of the cycle comes negative. <br>For example,</p>
         <img src="/Graph/ShortestPath/BellmanFord/img/9.jpg" class="w3-round-small" alt="Negative Cycle Exmaple">
@@ -357,7 +355,7 @@
         </p>
         
 
-
+        <br>
         <h3><strong>Some points to be noticed</strong></h3>
         <p>•  After the 1st iteration we become sure about the shortest path of the adjacent nodes to the source.</p>
             <img src="/Graph/ShortestPath/BellmanFord/img/9-1.jpg" class="w3-round-small" alt="Point">
@@ -365,9 +363,10 @@
         <p>•	If there are V nodes and more than V-1 edges then there must be a cycle in that graph. We don’t need to calculate cycles to calculate shortest path. So, we know for sure that there would be at most V-1 iterations</p>
 
 
+        <br>
         <h3><strong>Pseudocode</strong></h3>
         <div class="w3-panel w3-card-4 w3-black">
-          <h6>pseudocode:</h6><hr>
+          <h6>Bellman Ford Algorithm:</h6><hr>
           <code>
             BellmanFord (G,w,s) <br>
             &ThickSpace; for (x: x ∈ V) <br>
@@ -392,17 +391,20 @@
         <br>
 
         <div class="complexity">
+          <br>
           <h3><strong>Time Complexity</strong></h3>
-        <p>Let, 
-          <ul>
-            <li>V = number of Vertices/Nodes</li>
-            <li>E = number of Edges</li>
-          </ul>
-        </p>
-        <img src="/Graph/ShortestPath/BellmanFord/img/10.jpg" class="w3-round-small" alt="Complexity">
-        <p>So, the time complexity would be O(V + VE+ E) <br> = <strong>O (VE)</strong> </p>
-        <h3><strong>Space Complexity</strong></h3>
-        <p>As it just need extra space for all the edges if we use EdgeList Space Complexity would be <br> = <strong>O(E)</strong> (number of edges)</p> 
+          <p>Let, 
+           <ul>
+              <li>V = number of Vertices/Nodes</li>
+              <li>E = number of Edges</li>
+            </ul>
+          </p>
+          <img src="/Graph/ShortestPath/BellmanFord/img/10.jpg" class="w3-round-small" alt="Complexity">
+          <p>So, the time complexity would be O(V + VE+ E) <br> = <strong>O (VE)</strong> </p>
+
+          <br>
+          <h3><strong>Space Complexity</strong></h3>
+          <p>As it just need extra space for all the edges if we use EdgeList Space Complexity would be <br> = <strong>O(E)</strong> (number of edges)</p> 
         </div>
         
 
